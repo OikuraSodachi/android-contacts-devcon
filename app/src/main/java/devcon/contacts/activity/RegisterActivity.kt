@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import devcon.contacts.Contact
 import devcon.contacts.objects.MyObjects.contactsList
+import devcon.contacts.toast
 import devcon.learn.contacts.R
 
 class RegisterActivity : AppCompatActivity() {
@@ -33,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         saveButton.setOnClickListener { onSave() }
-        cancelButton.setOnClickListener { toast(getString(R.string.onCancel)) }
+        cancelButton.setOnClickListener { toast(this, getString(R.string.onCancel)) }
         moreButton.setOnClickListener {
             moreButton.visibility = GONE
             optionalLayout.visibility = VISIBLE
@@ -49,10 +50,10 @@ class RegisterActivity : AppCompatActivity() {
         val contact = contactInputText.text.isNullOrEmpty()
         if (!name && !contact) {
             save()
-            toast(getString(R.string.onSave))
+            toast(this, getString(R.string.onSave))
             finish()
         } else {
-            toast(getString(R.string.onSaveFail))
+            toast(this, getString(R.string.onSaveFail))
         }
     }
 
@@ -68,6 +69,4 @@ class RegisterActivity : AppCompatActivity() {
             )
         )
     }
-
-    fun toast(text: String) = Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
 }
