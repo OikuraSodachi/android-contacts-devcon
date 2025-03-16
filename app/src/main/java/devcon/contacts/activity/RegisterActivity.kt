@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import devcon.contacts.Contact
-import devcon.contacts.objects.MyObjects.model
+import devcon.contacts.objects.MyObjects.contactsList
 import devcon.learn.contacts.R
 
 class RegisterActivity : AppCompatActivity() {
@@ -57,7 +57,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun save(){
-        model.contactsList.add(
+        contactsList.add(
             Contact(
                 nameInputText.text.toString(),
                 contactInputText.text.toString().toLong(),
