@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import devcon.contacts.Contact
 import devcon.learn.contacts.R
 
+/** must be started with [devcon.contacts.toContactActivity] **/
 class ContactActivity : AppCompatActivity() {
 
     companion object{
