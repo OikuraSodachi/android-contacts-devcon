@@ -1,4 +1,4 @@
-package devcon.contacts
+package devcon.contacts.activity
 
 import android.os.Bundle
 import android.view.View.GONE
