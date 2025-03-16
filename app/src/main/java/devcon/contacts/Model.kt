@@ -2,7 +2,7 @@ package devcon.contacts
 
 class Model {
 
-    var contactsList = emptyList<Contact>()
+    val contactsList = mutableListOf<Contact>()
 
     fun onClick(item:Contact){
 

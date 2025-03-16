@@ -5,6 +5,6 @@ data class Contact(
     val contact:Long,
     val mail:String? = null,
     val birthday:String? = null,
-    val gender:Boolean? = null,
+    val gender:String? = null,
     val memo:String? = null
 )
