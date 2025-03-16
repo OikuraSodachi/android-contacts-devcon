@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Contacts"
         tools:targetApi="33">
         <activity
+            android:name="devcon.contacts.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name="devcon.contacts.MainActivity"
             android:exported="true">
             <intent-filter>
