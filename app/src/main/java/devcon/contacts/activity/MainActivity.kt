@@ -13,11 +13,11 @@ import devcon.learn.contacts.R
 
 class MainActivity : AppCompatActivity() {
 
-    private val registerButton by lazy{findViewById<FloatingActionButton>(R.id.registerButton)}
-    private val recyclerView by lazy{findViewById<RecyclerView>(R.id.contactsRecyclerView)}
-    private val recyclerAdapter by lazy{
+    private val registerButton by lazy { findViewById<FloatingActionButton>(R.id.registerButton) }
+    private val recyclerView by lazy { findViewById<RecyclerView>(R.id.contactsRecyclerView) }
+    private val recyclerAdapter by lazy {
         ContactRecyclerAdapter(
-            onClick = { toContactActivity(this@MainActivity,it) }
+            onClick = { toContactActivity(this@MainActivity, it) }
         ).apply {
             itemList = contactsList
         }
@@ -27,12 +27,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerView.run{
+        recyclerView.run {
             adapter = recyclerAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
 
-        registerButton.setOnClickListener { startActivity(Intent(this, RegisterActivity::class.java)) }
+        registerButton.setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    RegisterActivity::class.java
+                )
+            )
+        }
     }
 
     override fun onResume() {

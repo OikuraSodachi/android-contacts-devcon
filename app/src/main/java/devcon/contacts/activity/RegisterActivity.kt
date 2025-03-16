@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         saveButton.setOnClickListener { onSave() }
-        cancelButton.setOnClickListener { toast(this, getString(R.string.onCancel)) }
+        cancelButton.setOnClickListener { onCancel() }
         moreButton.setOnClickListener {
             moreButton.visibility = GONE
             optionalLayout.visibility = VISIBLE
@@ -57,7 +57,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    fun save(){
+    fun save() {
         contactsList.add(
             Contact(
                 nameInputText.text.toString(),
@@ -70,10 +70,15 @@ class RegisterActivity : AppCompatActivity() {
         )
     }
 
-    fun datePicker(){
-        val listener = DatePickerDialog.OnDateSetListener{picker,y,m,d ->
+    fun onCancel() {
+        toast(this, getString(R.string.onCancel))
+        finish()
+    }
+
+    fun datePicker() {
+        val listener = DatePickerDialog.OnDateSetListener { picker, y, m, d ->
             birthdayInputText.setText("${y}년 ${m}월 ${d}일")
         }
-        DatePickerDialog(this,listener,2025,1,1).show()
+        DatePickerDialog(this, listener, 2025, 1, 1).show()
     }
 }
