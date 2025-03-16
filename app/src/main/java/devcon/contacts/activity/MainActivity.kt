@@ -20,7 +20,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recyclerView.run{
-            adapter = ContactRecyclerAdapter().apply { itemList = model.contactsList }
+            adapter = ContactRecyclerAdapter(
+                onClick = {model.onClick(it)}
+            ).apply { itemList = model.contactsList }
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
 
