@@ -24,7 +24,7 @@
                 android:id="@+id/nameInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="이름"
+                android:hint="@string/nameInputHint"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -37,7 +37,7 @@
                 android:id="@+id/contactInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="전화번호"
+                android:hint="@string/contactInputHint"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -50,7 +50,7 @@
                 android:id="@+id/mailInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="메일"
+                android:hint="@string/mailInputHint"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:text="더보기" />
+                android:text="@string/more_button" />
 
             <LinearLayout
                 android:id="@+id/optionalLayout"
@@ -82,7 +82,7 @@
                         android:id="@+id/birthdayInputEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="생일"
+                        android:hint="@string/birthdayInputHint"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -103,7 +103,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:enabled="false"
-                            android:hint="성별" />
+                            android:hint="@string/genderInputHint" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,13 +117,13 @@
                             android:id="@+id/femaleButton"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="여성" />
+                            android:text="@string/female_button" />
 
                         <RadioButton
                             android:id="@+id/maleButton"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="남성" />
+                            android:text="@string/male_button" />
                     </RadioGroup>
 
                 </LinearLayout>
@@ -137,7 +137,7 @@
                         android:id="@+id/memoInputEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="메모"
+                        android:hint="@string/memoInputHint"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -158,14 +158,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="취소" />
+            android:text="@string/cancel_button" />
 
         <Button
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="저장" />
+            android:text="@string/save_button" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
