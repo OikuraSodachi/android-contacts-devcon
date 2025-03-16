@@ -1,5 +1,6 @@
 package devcon.contacts.activity
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
@@ -7,7 +8,6 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import devcon.contacts.Contact
@@ -39,7 +39,7 @@ class RegisterActivity : AppCompatActivity() {
             moreButton.visibility = GONE
             optionalLayout.visibility = VISIBLE
         }
-
+        birthdayInputText.setOnClickListener { datePicker() }
         genderSelection.setOnCheckedChangeListener { _, selected ->
             genderInputText.setText(findViewById<RadioButton>(selected).text)
         }
@@ -68,5 +68,12 @@ class RegisterActivity : AppCompatActivity() {
                 memoInputText.text?.toString()
             )
         )
+    }
+
+    fun datePicker(){
+        val listener = DatePickerDialog.OnDateSetListener{picker,y,m,d ->
+            birthdayInputText.setText("${y}년 ${m}월 ${d}일")
+        }
+        DatePickerDialog(this,listener,2025,1,1).show()
     }
 }
