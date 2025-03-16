@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         saveButton.setOnClickListener { onSave() }
-        cancelButton.setOnClickListener { toast("취소 되었습니다") }
+        cancelButton.setOnClickListener { toast(getString(R.string.onCancel)) }
         moreButton.setOnClickListener {
             moreButton.visibility = GONE
             optionalLayout.visibility = VISIBLE
@@ -43,9 +43,9 @@ class MainActivity : AppCompatActivity() {
         val name = nameInputText.text.isNullOrEmpty()
         val contact = contactInputText.text.isNullOrEmpty()
         if (!name && !contact) {
-            toast("저장이 완료 되었습니다")
+            toast(getString(R.string.onSave))
         } else {
-            toast("이름, 전화번호는 필수 항목입니다")
+            toast(getString(R.string.onSaveFail))
         }
     }
 
