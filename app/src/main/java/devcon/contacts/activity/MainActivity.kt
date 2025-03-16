@@ -21,7 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.run{
             adapter = ContactRecyclerAdapter(
-                onClick = {model.onClick(it)}
+                onClick = {
+                    model.onClick(it)
+                    startActivity(Intent(this@MainActivity,ContactActivity::class.java))
+                }
             ).apply { itemList = model.contactsList }
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
