@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             adapter = recyclerAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
-
         registerButton.setOnClickListener {
             startActivity(
                 Intent(
