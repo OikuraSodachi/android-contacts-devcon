@@ -54,10 +54,10 @@ abstract class BaseRegisterActivity:AppCompatActivity() {
             Contact(
                 nameInputText.text.toString(),
                 contactInputText.text.toString().toLong(),
-                mailInputText.text?.toString(),
-                birthdayInputText.text?.toString(),
-                genderInputText.text?.toString(),
-                memoInputText.text?.toString()
+                mailInputText.text.toString(),
+                birthdayInputText.text.toString(),
+                genderInputText.text.toString(),
+                memoInputText.text.toString()
             )
         )
     }
